@@ -129,7 +129,7 @@ var currentMC = 1; // The current multiple choice question the user is doing
 var lastMC = 3;
 // Answer stores a 2D array of the answers for the relevent questions
 var Answers = [
-    [3,6,7],
+    [1,2,3],
     [] //...
 ]
 var Answer = [4,3,3];
@@ -201,32 +201,48 @@ document.querySelector("#Restart").addEventListener('click', function(){
 
 document.querySelector("#Submit").addEventListener('click', function(){
     var _userAnswer = document.querySelector('input[name="q' +  currentMC.toString()+'"]:checked');
+    var _userAnswerLabel = document.querySelector("label[for = '" + _userAnswer.id + "']");
+    var _rightAnswer = document.querySelector("label[for = 'q" + currentMC.toString() + "-" + Answer[currentMC-1].toString() + "']");
 
     // A list of the answer objects that the user has selected 
     var _userAnswers = document.querySelectorAll('input[name="q' +  currentMC.toString()+'"]:checked');
-    console.log(_userAnswers); 
+    
 
-    var _userAnswerLabel = document.querySelector("label[for = '" + _userAnswer.id + "']");
-    var _rightAnswer = document.querySelector("label[for = 'q" + currentMC.toString() + "-" + Answer[currentMC-1].toString() + "']");
     // A list of the correct answer objects
     var _rightAnswers = [];
     for (const answerNo of Answers[currentMC-1]) {
         _rightAnswers.push(document.querySelector("label[for = 'q" + currentMC.toString() + "-" + answerNo.toString() + "']"));
     } 
-    console.log(_rightAnswers);
+
+    var _userAnswerLabels = [];
+    for (const userAnswerNo of _userAnswers) {
+        _userAnswerLabels.push(document.querySelectorAll("label[for = '" + userAnswerNo.id + "']"));
+    }
 
     _userAnswer.checked= false;
-    if(_userAnswer.value == Answer[currentMC-1].toString()){
-        _userAnswerLabel.style.backgroundColor = "green";
-        document.querySelector("#Submit").style.display = "none";
-        document.querySelector(".MCQexplain").style.display = "block";
+    for (const [i, userAnswerNo] of _userAnswers.entries()) {
+        console.log(userAnswerNo)
+        console.log(_rightAnswers)
+        if (_rightAnswers.includes(_userAnswerLabels[i])) {
+            console.log('in')
+            _userAnswerLabels[i].style.backgroundColor = 'pink'
+            document.querySelector("#Submit").style.display = "none";
+            document.querySelector(".MCQexplain").style.display = "block";
+
+        }
+
     }
-    else{
-        _userAnswerLabel.style.backgroundColor = "red";
-        _rightAnswer.style.backgroundColor="green";
-        document.querySelector("#Submit").style.display = "none";
-        document.querySelector(".MCQexplain").style.display = "block";
-    }
+    // if(_userAnswer.value == Answer[currentMC-1].toString()){
+        // _userAnswerLabel.style.backgroundColor = "green";
+        // document.querySelector("#Submit").style.display = "none";
+        // document.querySelector(".MCQexplain").style.display = "block";
+    // }
+    // else{
+        // _userAnswerLabel.style.backgroundColor = "red";
+        // _rightAnswer.style.backgroundColor="green";
+        // document.querySelector("#Submit").style.display = "none";
+        // document.querySelector(".MCQexplain").style.display = "block";
+    // }
     Checked.push(currentMC);
 
     //document.querySelector("#Submit").innerHTML = document.querySelector('input[name="q' +  currentMC.toString()+'"]:checked').value;
