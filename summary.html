@@ -9,7 +9,7 @@
 </head>
 <body>
 <div style="position:fixed; left: 18vw; bottom: 3vw; font-size: 1.5vw;"><a href="index.html">< Prev </a>  </div>
-<div style="position:fixed; right: 3vw; bottom: 3vw; font-size: 1.5vw;"><a href="question1.html">Next ></a>  </div>
+<div style="position:fixed; right: 3vw; bottom: 3vw; font-size: 1.5vw;"><a href="main2.html">Next ></a>  </div>
     <div id="divider" style="width:15%;">
         <div style="width:16%; background: white; color:black;" id="menu">
             <div id="title"> <a href="index.html" style="color:white;">PCR Analysis</a></div>
@@ -30,17 +30,24 @@
 
     <div id="main">
         <h1>Common Mistakes in qPCR and Corrective Steps</h1>
-        <h2 id="section1">1. Overview
+        <h2 id="section1">2. Multiple Choice Quiz
             <hr class="title-line" align = "left">
         </h2>
 
-        <div class = "explain" align="left">
-            <p>
-                This quiz aims to aid your learning of the qPCR experiment protocol by displaying common mistakes made in steps of the procedure. 
-                Each question will have a graph showing an observation error and points of potential causes. 
-                Select the appropriate corrective steps to be taken to correct the error.
-                <br>
+        <div class = "multiple-choice" id="multiple-choice">
+
+            <br><br>
+            <div style="margin:0;" align="center">
+                <button id="B" style="position:absolute; left: 28vw;">Back</button>
+                <button id="N" style="position:absolute; right: 12vw;">Next</button>
+                <button id="Submit" style="position:absolute; right: 34vw;">Check</button>
+                <button id="Restart" type="submit" style="position:absolute; right: 12vw; display:none;" >Restart</button>
+            </div>
+            <div style="width: 35vw; margin:auto; line-height: 1.5vw;" class="MCQexplain" align="center">We explain here why the chosen answer is wrong etc..</div>
+            <div style="height: 8vw"></div>
+
         </div>
+
 
 
         <br> <br><br> <br><br> <br>
@@ -49,15 +56,34 @@
     </div>
 </body>
 <script>
+
 document.querySelector(".MCQexplain").style.display = 'none';
 document.querySelector(".mc2").style.display = 'none';
 document.querySelector(".mc3").style.display = 'none';
+document.querySelector(".mc4").style.display = 'none';
+document.querySelector(".mc5").style.display = 'none';
+document.querySelector(".mc6").style.display = 'none';
+document.querySelector(".mc7").style.display = 'none';
 
-var currentMC = 1;
-var lastMC = 3;
-var Answer = [4,3,3];
+
+var currentMC = 1; // The current multiple choice question the user is doing
+var lastMC = 7;
+// Answer stores a 2D array of the answers for the relevent questions
+var Answers = [
+    [1,4,5,6,8],
+    [1,2,3,5,6,8,9],
+    [1,2,4],
+    [1,3,5,6,8],
+    [1,2,5,6],
+    [1,3,5],
+    [1,4,5],
+]
+// var Answer = [4,3,3];
+
 var Checked = [];
+
 document.querySelector("#B").style.display = 'none';
+
 document.querySelector("#N").addEventListener('click', function(){
     var _className = ".mc" + currentMC.toString();
     document.querySelector(_className).style.display = 'none';
@@ -74,7 +100,6 @@ document.querySelector("#N").addEventListener('click', function(){
         document.querySelector("#Submit").style.display = "block";
         document.querySelector(".MCQexplain").style.display = "none";
     }
-
 
     if(currentMC == 2)
     {
@@ -113,30 +138,47 @@ document.querySelector("#B").addEventListener('click', function(){
     };
     document.querySelector("#Restart").style.display = 'none';
 });
+
 function Reset(item, label) {
     item.style.backgroundColor="";
 };
+
 document.querySelector("#Restart").addEventListener('click', function(){
     var Labels = document.querySelectorAll("label");
     Labels.forEach(Reset);
 });
 
 document.querySelector("#Submit").addEventListener('click', function(){
-    var _userAnswer = document.querySelector('input[name="q' +  currentMC.toString()+'"]:checked');
-    var _userAnswerLabel = document.querySelector("label[for = '" + _userAnswer.id + "']");
-    var _rightAnswer = document.querySelector("label[for = 'q" + currentMC.toString() + "-" + Answer[currentMC-1].toString() + "']");
-    _userAnswer.checked= false;
-    if(_userAnswer.value == Answer[currentMC-1].toString()){
-        _userAnswerLabel.style.backgroundColor = "green";
-        document.querySelector("#Submit").style.display = "none";
-        document.querySelector(".MCQexplain").style.display = "block";
+    var _userAnswers = document.querySelectorAll('input[name="q' +  currentMC.toString()+'"]:checked');
+
+    var _userAnswerLabels = [];
+    for (const userAnswerNo of _userAnswers) {
+        _userAnswerLabels.push(document.querySelectorAll("label[for = '" + userAnswerNo.id + "']"));
     }
-    else{
-        _userAnswerLabel.style.backgroundColor = "red";
-        _rightAnswer.style.backgroundColor="green";
-        document.querySelector("#Submit").style.display = "none";
-        document.querySelector(".MCQexplain").style.display = "block";
+
+    // A list of the correct answer objects
+    var _rightLabels = [];
+    for (const answerNo of Answers[currentMC-1]) {
+        _rightLabels.push(document.querySelector("label[for = 'q" + currentMC.toString() + "-" + answerNo.toString() + "']"));
+    } 
+
+
+    //_userAnswer.checked= false;
+    for (const [i, userAnswerNo] of _userAnswers.entries()) {
+
+        if (Answers[currentMC-1].includes(parseInt(userAnswerNo.value))) {
+            _userAnswerLabels[i][0].style.backgroundColor = "green";
+            document.querySelector("#Submit").style.display = "none";
+            document.querySelector(".MCQexplain").style.display = "block";
+        }
+        else {
+            _userAnswerLabels[i][0].style.backgroundColor = "red";
+            document.querySelector("#Submit").style.display = "none";
+            document.querySelector(".MCQexplain").style.display = "block";
+        }
+
     }
+
     Checked.push(currentMC);
 
     //document.querySelector("#Submit").innerHTML = document.querySelector('input[name="q' +  currentMC.toString()+'"]:checked').value;
