@@ -31,16 +31,13 @@
   
     <div id="main">
         <h1>Common Mistakes in qPCR and Corrective Steps</h1>
-        <h2 id="section1">2. Multiple Choice Quiz
+        <h2 id="section1">Question 1: Cq is earlier than expected
           <hr class="title-line" align = "left">
         </h2>
       
         <div class = "multiple-choice" id="multiple-choice">
             <div class="mc mc1">
                 <div class="question">
-                <p style="font-size:1.5vw">
-                    <strong>Question 1: </strong>
-                    <strong>Cq is earlier than expected</strong>
                 <img style="position:relative; top:0.5vw;" src="graph_q1.png" alt="Graph Q1">
                 <p style="font-size:1.25vw">
                     Potential Causes:
@@ -55,7 +52,7 @@
                 </p>
                 </div>
                 <div class="answers">
-                    <p><strong>Select all corrective steps (4):</strong></p>
+                    <p><strong>Select all corrective steps (5):</strong></p>
 
                     <input id="q1-1" type="checkbox" name="q1">
                     <label for="q1-1" class="answer-label" data-value="1">
@@ -98,11 +95,6 @@
                     </label>
                     <br>
 
-                
-        
-
-
-                
                 </div>
             </div>
         </div>
@@ -123,7 +115,7 @@
     // get all the selected answers
     const selectedAnswers = document.querySelectorAll('input:checked');
     // get the correct answers
-    const correctAnswers = [1, 4, 6];
+    const correctAnswers = [1, 4, 5, 6, 8];
     // check if the selected answers match the correct answers
     let isCorrect = true;
     selectedAnswers.forEach(answer => {

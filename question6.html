@@ -8,232 +8,124 @@
     <title>Overview - Common Mistakes and Corrective Steps</title>
 </head>
 <body>
-<div style="position:fixed; left: 18vw; bottom: 3vw; font-size: 1.5vw;"><a href="question5.html">< Prev </a>  </div>
-<div style="position:fixed; right: 3vw; bottom: 3vw; font-size: 1.5vw;"><a href="question7.html">Next ></a>  </div>
-    <div id="divider" style="width:15%;">
-        <div style="width:16%; background: white; color:black;" id="menu">
-            <div id="title"> <a href="index.html" style="color:white;">PCR Analysis</a></div>
-            <div class="section">
-                Common Mistakes <br>
-                <a href="main1.html">Overview</a><br>
-                <a href="question1.html">Question 1</a><br>
-                <a href="question2.html">Question 2</a><br>
-                <a href="question3.html">Question 3</a><br>
-                <a href="question4.html">Question 4</a><br>
-                <a href="question5.html">Question 5</a><br>
-                <a href="question6.html">Question 6</a><br>
-                <a href="question7.html">Question 7</a><br>
-                <a href="summary.html">Summary</a><br>
-            </div>
+    <div style="position:fixed; left: 18vw; bottom: 3vw; font-size: 1.5vw;"><a href="question5.html">< Prev </a>  </div>
+    <div style="position:fixed; right: 3vw; bottom: 3vw; font-size: 1.5vw;"><a href="question7.html">Next ></a>  </div>
+    <div style="position:fixed; right: 3vw; bottom: 6vw; font-size: 1.5vw;"><label class="submit-button">Check</label></div>
+    <div id="divider" style="width:10%;">
+      <div style="width:16%; background: white; color:black;" id="menu">
+        <div id="title"> <a href="index.html" style="color:white;">PCR Analysis</a></div>
+        <div class="section">
+          Common Mistakes <br>
+          <a href="main1.html">Overview</a><br>
+          <a href="question1.html">Question 1</a><br>
+          <a href="question2.html">Question 2</a><br>
+          <a href="question3.html">Question 3</a><br>
+          <a href="question4.html">Question 4</a><br>
+          <a href="question5.html">Question 5</a><br>
+          <a href="question6.html">Question 6</a><br>
+          <a href="question7.html">Question 7</a><br>
+          <a href="summary.html">Summary</a><br>
         </div>
+      </div>
     </div>
-
+  
     <div id="main">
         <h1>Common Mistakes in qPCR and Corrective Steps</h1>
-        <h2 id="section1">2. Multiple Choice Quiz
-            <hr class="title-line" align = "left">
+        <h2 id="section1">Question 6: The plateau is found much lower than expected
+          <hr class="title-line" align = "left">
         </h2>
-
+      
         <div class = "multiple-choice" id="multiple-choice">
-            <div class="mc mc6">
-                <h2>Q6</h2>
+            <div class="mc mc1">
+                <div class="question">
+                <img style="position:relative; top:0.5vw;" src="graph_q6.png" alt="Graph Q1">
+                <p style="font-size:1.25vw">
+                    Potential Causes:
 
-                <div class="grid-container">
+                    <ul>
+                        <li>There are limiting reagents</li>
+                        <li>The reagents are degraded (dNTPs or master mix)</li>
+                        <li>Some of the probe dyes are less bright than others</li>
+                        <li>The reaction is inefficient</li>
+                        <li>The probe concentration is incorrect</li>
+                    </ul>
+                </p>
+                </div>
+                <div class="answers">
+                    <p><strong>Select all corrective steps (3):</strong></p>
 
-                    <div class="grid-child purple">
-                        <img style="position:relative; top:0.5vw;" src="graph_q1.png" alt="Graph Q1">
-                    </div>
-                
-                    <div class="grid-child green">
-                        <p style="font-size:1.25vw">
-                            <strong>The plateau is found much lower than expected.</strong>
-                            <br><br><br>
-                            Potential Causes:<br><br>
-                            - There are limiting reagents.<br>
-                            - The reagents are degraded (dNTPs or master mix).<br>
-                            - Some of the probe dyes are less bright than the others.<br>
-                            - The reaction is inefficient.<br>
-                            - The probe concentration is incorrect.<br>
+                    <input id="q1-1" type="checkbox" name="q1">
+                    <label for="q1-1" class="answer-label" data-value="1">
+                        The calculations need to be checked for master mix
+                    </label>
+                    <br>
+                    <input id="q1-2" type="checkbox" name="q1">
+                    <label for="q1-2" class="answer-label" data-value="2">
+                        The experiment should be repeated with new probe and dyes
+                    </label>
+                    <br>
+                    <input id="q1-3" type="checkbox" name="q1">
+                    <label for="q1-3" class="answer-label" data-value="3">
+                        The end-point fluorescence needs to be compared to a different reaction under a probe labelled with the same dye
+                    </label>
+                    <br>
+                    <input id="q1-4" type="checkbox" name="q1">
+                    <label for="q1-4" class="answer-label" data-value="4">
+                        The probe concentration needs to be changed
+                    </label>
+                    <br>
+                    <input id="q1-5" type="checkbox" name="q1">
+                    <label for="q1-5" class="answer-label" data-value="5">
+                        The experiment should be repeated with fresh stock solutions
+                    </label>
+                    <br>
+                    <input id="q1-6" type="checkbox" name="q1">
+                    <label for="q1-6" class="answer-label" data-value="6">
+                        The efficiency of the reaction needs to be calculated - and the experiment repeated
+                    </label>
+                    <br>
 
-                        </p>
-
-                        <input id="q6-1" type="checkbox" name="q6" value="1">
-                        <label for="q6-1">
-                            The calculations need to be checked for master mix.
-                        </label>
-                        <input id="q6-2" type="checkbox" name="q6" value="2">
-                        <label for="q6-2">
-                            The experiment should be repeated with new probe and dyes.
-                        </label>
-                        <input id="q6-3" type="checkbox" name="q6" value="3">
-                        <label for="q6-3">
-                            The end-point fluorescence needs to be compared to a different reaction under a probe labelled with the same dye.
-                        </label>
-                        <input id="q6-4" type="checkbox" name="q6" value="4">
-                        <label for="q6-4">
-                            The probe concentration needs to be changed.
-                        </label>
-                        <input id="q6-5" type="checkbox" name="q6" value="5">
-                        <label for="q6-5">
-                            The experiment should be repeated with fresh stock solutions.
-                        </label>
-                        <input id="q6-6" type="checkbox" name="q6" value="6">
-                        <label for="q6-6">
-                            The efficiency of the reaction needs to be calculated - and the experiment repeated.
-                        </label>
-                    </div>
                 </div>
             </div>
-
-            <br><br>
-            <div style="margin:0;" align="center">
-                <button id="B" style="position:absolute; left: 28vw;">Back</button>
-                <button id="N" style="position:absolute; right: 12vw;">Next</button>
-                <button id="Submit" style="position:absolute; right: 34vw;">Check</button>
-                <button id="Restart" type="submit" style="position:absolute; right: 12vw; display:none;" >Restart</button>
-            </div>
-            <div style="width: 35vw; margin:auto; line-height: 1.5vw;" class="MCQexplain" align="center">We explain here why the chosen answer is wrong etc..</div>
-            <div style="height: 8vw"></div>
-
         </div>
-
-
-
-        <br> <br><br> <br><br> <br>
-
 
     </div>
 </body>
 <script>
+    const answerLabels = document.querySelectorAll('.answer-label');
+    // change the background color of the label to blue when clicked
+    answerLabels.forEach(label => {
+    label.addEventListener('click', function() {
+        this.style.backgroundColor = 'blue';
+    });
+    });
 
-document.querySelector(".MCQexplain").style.display = 'none';
-document.querySelector(".mc2").style.display = 'none';
-document.querySelector(".mc3").style.display = 'none';
-document.querySelector(".mc4").style.display = 'none';
-document.querySelector(".mc5").style.display = 'none';
-document.querySelector(".mc6").style.display = 'none';
-document.querySelector(".mc7").style.display = 'none';
-
-
-var currentMC = 1; // The current multiple choice question the user is doing
-var lastMC = 7;
-// Answer stores a 2D array of the answers for the relevent questions
-var Answers = [
-    [1,4,5,6,8],
-    [1,2,3,5,6,8,9],
-    [1,2,4],
-    [1,3,5,6,8],
-    [1,2,5,6],
-    [1,3,5],
-    [1,4,5],
-]
-// var Answer = [4,3,3];
-
-var Checked = [];
-
-document.querySelector("#B").style.display = 'none';
-
-document.querySelector("#N").addEventListener('click', function(){
-    var _className = ".mc" + currentMC.toString();
-    document.querySelector(_className).style.display = 'none';
-    currentMC += 1;
-    _className = ".mc" + currentMC.toString();
-    document.querySelector(_className).style.display = 'block';
-    document.querySelector(".MCQexplain").style.display = "none";
-
-    if(Checked.includes(currentMC)){
-        document.querySelector("#Submit").style.display = "none";
-        document.querySelector(".MCQexplain").style.display = "block";
-    }
-    else{
-        document.querySelector("#Submit").style.display = "block";
-        document.querySelector(".MCQexplain").style.display = "none";
-    }
-
-    if(currentMC == 2)
-    {
-        document.querySelector("#B").style.display = 'block';
-    };
-    if(currentMC == lastMC)
-    {
-        document.querySelector("#N").style.display = 'none';
-        document.querySelector("#Restart").style.display = 'block';
-    };
-});
-
-document.querySelector("#B").addEventListener('click', function(){
-    var _className = ".mc" + currentMC.toString();
-    document.querySelector(_className).style.display = 'none';
-    currentMC -= 1;
-    _className = ".mc" + currentMC.toString();
-    document.querySelector(_className).style.display = 'block';
-
-    if(Checked.includes(currentMC)){
-        document.querySelector("#Submit").style.display = "none";
-        document.querySelector(".MCQexplain").style.display = "block";
-    }
-    else{
-        document.querySelector("#Submit").style.display = "block";
-        document.querySelector(".MCQexplain").style.display = "none";
-    }
-
-    if(currentMC == 1)
-    {
-        document.querySelector("#B").style.display = 'none';
-    };
-    if(currentMC == lastMC -1)
-    {
-        document.querySelector("#N").style.display = 'block';
-    };
-    document.querySelector("#Restart").style.display = 'none';
-});
-
-function Reset(item, label) {
-    item.style.backgroundColor="";
-};
-
-document.querySelector("#Restart").addEventListener('click', function(){
-    var Labels = document.querySelectorAll("label");
-    Labels.forEach(Reset);
-});
-
-document.querySelector("#Submit").addEventListener('click', function(){
-    var _userAnswers = document.querySelectorAll('input[name="q' +  currentMC.toString()+'"]:checked');
-
-    var _userAnswerLabels = [];
-    for (const userAnswerNo of _userAnswers) {
-        _userAnswerLabels.push(document.querySelectorAll("label[for = '" + userAnswerNo.id + "']"));
-    }
-
-    // A list of the correct answer objects
-    var _rightLabels = [];
-    for (const answerNo of Answers[currentMC-1]) {
-        _rightLabels.push(document.querySelector("label[for = 'q" + currentMC.toString() + "-" + answerNo.toString() + "']"));
-    } 
-
-
-    //_userAnswer.checked= false;
-    for (const [i, userAnswerNo] of _userAnswers.entries()) {
-
-        if (Answers[currentMC-1].includes(parseInt(userAnswerNo.value))) {
-            _userAnswerLabels[i][0].style.backgroundColor = "green";
-            document.querySelector("#Submit").style.display = "none";
-            document.querySelector(".MCQexplain").style.display = "block";
+    const submitButton = document.querySelector('.submit-button');
+    submitButton.addEventListener('click', function() {
+    // get all the selected answers
+    const selectedAnswers = document.querySelectorAll('input:checked');
+    // get the correct answers
+    const correctAnswers = [1,3,5];
+    // check if the selected answers match the correct answers
+    let isCorrect = true;
+    selectedAnswers.forEach(answer => {
+        if (!correctAnswers.includes(Number(answer.getAttribute('data-value')))) {
+        isCorrect = false;
         }
-        else {
-            _userAnswerLabels[i][0].style.backgroundColor = "red";
-            document.querySelector("#Submit").style.display = "none";
-            document.querySelector(".MCQexplain").style.display = "block";
+    });
+
+    // update the background color of the labels to
+    // green if the answer is correct and red if the answer is incorrect
+    answerLabels.forEach(label => {
+        const value = Number(label.getAttribute('data-value'));
+        const input = label.previousElementSibling;
+        if (input.checked && correctAnswers.includes(value)) {
+        label.style.backgroundColor = 'green';
+        } else if (input.checked) {
+        label.style.backgroundColor = 'red';
         }
-
-    }
-
-    Checked.push(currentMC);
-
-    //document.querySelector("#Submit").innerHTML = document.querySelector('input[name="q' +  currentMC.toString()+'"]:checked').value;
-});
-
-
+    });
+    });
 
 </script>
 
